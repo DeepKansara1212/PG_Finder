@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+/* ✅ Correct Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts */
+.font-display {
+  font-display: swap;
+}
+
+/* Extend base styles */
+@layer base {
+  * {
+    @apply border-dotted;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* CSS variables */
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+
+  --color-primary: #FF5A5F;
+  --color-secondary: #00A699;
+  --color-dark: #484848;
+  --color-neutral: #767676;
+  --color-neutral-light: #EBEBEB;
+  --color-success: #28A745;
+  --color-error: #DC3545;
+  --color-warning: #FFC107;
+}
+
+/* Custom hover effect */
+.property-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: var(--color-neutral-light);
+  }
+
+  .text-foreground {
+    color: var(--color-dark);
+  }
+}
